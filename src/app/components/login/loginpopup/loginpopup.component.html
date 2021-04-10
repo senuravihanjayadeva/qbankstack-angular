@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>Login</h1>
+<mat-dialog-content class="mat-typography">
+    <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Login</button>
+      </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <div class="row" style="margin: 10px;">
+  <div class="col-md-6 " style="align-items: center;">
+    <button mat-button  class="btn btn-success m" mat-dialog-close>Registration</button>
+  </div>
+  <div class="col-md-6" style="align-items: center;">
+    <button mat-button  class="btn btn-danger" mat-dialog-close>Cancel</button>
+  </div>
+    </div>
+  
+</mat-dialog-actions>
+
