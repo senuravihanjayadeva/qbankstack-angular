@@ -8,6 +8,9 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import { LoginpopupComponent } from './components/login/loginpopup/loginpopup.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { LoginpopupComponent } from './components/login/loginpopup/loginpopup.co
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonToggleModule,
+    MatSlideToggleModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
