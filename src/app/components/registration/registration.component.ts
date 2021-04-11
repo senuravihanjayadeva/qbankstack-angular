@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -8,13 +8,12 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class RegistrationComponent implements OnInit {
 
-  isChecked = true;
-
-  constructor(formBuilder: FormBuilder) {
-  }
-
+  constructor(private router : Router){}
 
   ngOnInit(): void {
+  }
+  onLogin(){
+    this.router.navigate(['/login']);
   }
 
 }

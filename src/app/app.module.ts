@@ -11,13 +11,15 @@ import { LoginpopupComponent } from './components/login/loginpopup/loginpopup.co
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { NotfoundComponent } from './components/notfound/notfound.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistrationComponent,
-    LoginpopupComponent
+    LoginpopupComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
