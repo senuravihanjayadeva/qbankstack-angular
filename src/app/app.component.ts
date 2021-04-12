@@ -1,4 +1,4 @@
-import { Route } from '@angular/compiler/src/core';
+import { Router } from '@angular/router';
 import { Component , OnInit } from '@angular/core';
 
 @Component({
@@ -7,8 +7,9 @@ import { Component , OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'qbankstack-angular';
+  title = 'Free-Mcq-platform';
+  constructor(private router : Router){}
   ngOnInit(): void {
-   
+   this.router.navigate(['/login']);
   }
 }
