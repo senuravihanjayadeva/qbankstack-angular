@@ -1,32 +1,52 @@
 <h1 mat-dialog-title>Login</h1>
 <mat-dialog-content class="mat-typography">
-    <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-          <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary mt-2">Login</button>
-        <a style="margin: 10px;" href="#">forget password?</a>
-      </form>
+  <form [formGroup]="loginForm">
+    <mat-card-content>
+      <mat-form-field appearance="outline" color="primary" style="width: 100%;">
+        <mat-label>Enter Your User Name:</mat-label>
+        <input id="username" type="text"
+          matInput placeholder="User Name" formControlName="username" required>
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-error>User name is required!</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" color="primary" style="width: 100%; margin-bottom: 10px;">
+        <mat-label>Enter Your Password :</mat-label>
+        <input id="password" type="password" [type]="hide ? 'password' : 'text'" matInput placeholder="Password"
+          formControlName="password" required>
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <mat-error>Password is required!</mat-error>
+      </mat-form-field>
+      <mat-checkbox style="margin: 5px;" color="primary" class="pt-3" formControlName="remember">Keep me remember :</mat-checkbox>
+    </mat-card-content>
+    <div>
+      <!-- <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value='teacher' for="teacher" id='teacher'  color='primary' style="margin: 5px;" >Teacher</mat-radio-button>
+        <mat-radio-button color='primary' value='student' for="student" id='student' style="margin: 5px;" >Student</mat-radio-button>
+      </mat-radio-group>       -->
+      <label *ngFor="let radiobutton of radioItems">
+        <mat-radio-button color='primary' style="margin: 3px;" type="radio" name="options" (click)="model.option = radiobutton"
+        [checked]="radiobutton === model.option">{{radiobutton}}</mat-radio-button>
+      </label>
+      
+    </div>
+    <!-- <button type="submit"  class="btn btn-primary mt-2">
+      Login
+    </button> -->
+    <a style="margin: 10px" href="#">forget password?</a>
+  </form>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-    <div class="row" style="margin: 10px;">
-  <div class="col-md-6 " style="align-items: center;">
-    <button mat-button  routerLink="/registration" class="btn btn-success m" mat-dialog-close>Registration</button>
+  <div class="col-md-6" style="align-items: center">
+    <button mat-button (click)="onSubmit()" class="btn btn-primary" mat-dialog-close>Login</button>
   </div>
-  <div class="col-md-6" style="align-items: center;">
-    <button mat-button  class="btn btn-danger" mat-dialog-close>Cancel</button>
-  </div>
+  <div class="row" style="margin: 10px">
+    <div class="col-md-6" style="align-items: center">
+      <button mat-button routerLink="/registration" class="btn btn-success m" mat-dialog-close>
+        Registration
+      </button>
     </div>
-  
+    <div class="col-md-6" style="align-items: center">
+      <button mat-button class="btn btn-danger" mat-dialog-close>Cancel</button>
+    </div>
+  </div>
 </mat-dialog-actions>
-
